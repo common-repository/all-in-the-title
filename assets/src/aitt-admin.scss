@@ -1,0 +1,159 @@
+$wp-red: #dc3232;
+$wp-green: #46b450;
+$wp-blue: #0085ba;
+
+.aitt-add-titles--intro {
+  line-height: 1.5;
+
+  .dashicons {
+    font-size: 16px;
+    height: 16px;
+    vertical-align: -2px;
+    width: 16px;
+  }
+}
+
+.aitt-add-titles--wrap {
+  margin-bottom: 12px;
+}
+
+.aitt-add-titles--label {
+  display: block;
+  font-weight: 600;
+}
+
+.aitt-add-titles--text-field {
+  margin: 4px 0 16px;
+  outline: 0;
+  padding: 4px 8px;
+  width: 100%;
+}
+
+.aitt-add-titles--checkbox-field {
+  margin: 4px 0 16px;
+}
+
+.aitt-add-titles--msg {
+  display: none;
+  font-style: italic;
+  margin: 12px 0;
+}
+
+.aitt-add-titles--msg-error {
+  color: $wp-red;
+}
+
+.aitt-add-titles--msg-success {
+  color: $wp-green;
+}
+
+.aitt-list-titles {
+  text-align: right;
+}
+
+.aitt-list-titles--description {
+  font-weight: 600;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.aitt-list-titles--divider {
+  margin-top: 4px;
+}
+
+.aitt-list-titles--entry {
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1.1em;
+  line-height: 1.5;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 4px 56px 4px 24px;
+  position: relative;
+  text-align: left;
+
+  &::before {
+    font-size: 16px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 16px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+    position: absolute;
+    top: 3px;
+  }
+}
+
+.aitt-list-titles--entry[data-private="true"] {
+  &::before {
+    content: "\f110";
+  }
+}
+
+.aitt-list-titles--entry[data-private="false"] {
+  &::before {
+    content: "\f11f";
+  }
+}
+
+.aitt-list-titles--create-post {
+  right: 28px;
+
+  &::before {
+    color: $wp-blue;
+    content: "\f119";
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:active {
+    &::before {
+      color: $wp-green;
+    }
+  }
+
+  &:hover {
+    &::before {
+      color: $wp-green;
+    }
+  }
+
+  &:focus {
+    &::before {
+      color: $wp-green;
+    }
+  }
+}
+
+.aitt-list-titles--delete-title {
+  right: 0;
+
+  &::before {
+    color: $wp-blue;
+    content: "\f182";
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:active {
+    &::before {
+      color: $wp-red;
+    }
+  }
+
+  &:hover {
+    &::before {
+      color: $wp-red;
+    }
+  }
+
+  &:focus {
+    &::before {
+      color: $wp-red;
+    }
+  }
+}

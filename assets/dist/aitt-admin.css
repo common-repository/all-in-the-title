@@ -1,0 +1,106 @@
+.aitt-add-titles--intro {
+  line-height: 1.5; }
+  .aitt-add-titles--intro .dashicons {
+    font-size: 16px;
+    height: 16px;
+    vertical-align: -2px;
+    width: 16px; }
+
+.aitt-add-titles--wrap {
+  margin-bottom: 12px; }
+
+.aitt-add-titles--label {
+  display: block;
+  font-weight: 600; }
+
+.aitt-add-titles--text-field {
+  margin: 4px 0 16px;
+  outline: 0;
+  padding: 4px 8px;
+  width: 100%; }
+
+.aitt-add-titles--checkbox-field {
+  margin: 4px 0 16px; }
+
+.aitt-add-titles--msg {
+  display: none;
+  font-style: italic;
+  margin: 12px 0; }
+
+.aitt-add-titles--msg-error {
+  color: #dc3232; }
+
+.aitt-add-titles--msg-success {
+  color: #46b450; }
+
+.aitt-list-titles {
+  text-align: right; }
+
+.aitt-list-titles--description {
+  font-weight: 600;
+  margin-bottom: 0;
+  text-align: left; }
+
+.aitt-list-titles--divider {
+  margin-top: 4px; }
+
+.aitt-list-titles--entry {
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1.1em;
+  line-height: 1.5;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 4px 56px 4px 24px;
+  position: relative;
+  text-align: left; }
+  .aitt-list-titles--entry::before {
+    font-size: 16px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 16px; }
+  .aitt-list-titles--entry button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+    position: absolute;
+    top: 3px; }
+
+.aitt-list-titles--entry[data-private="true"]::before {
+  content: "\f110"; }
+
+.aitt-list-titles--entry[data-private="false"]::before {
+  content: "\f11f"; }
+
+.aitt-list-titles--create-post {
+  right: 28px; }
+  .aitt-list-titles--create-post::before {
+    color: #0085ba;
+    content: "\f119";
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
+  .aitt-list-titles--create-post:active::before {
+    color: #46b450; }
+  .aitt-list-titles--create-post:hover::before {
+    color: #46b450; }
+  .aitt-list-titles--create-post:focus::before {
+    color: #46b450; }
+
+.aitt-list-titles--delete-title {
+  right: 0; }
+  .aitt-list-titles--delete-title::before {
+    color: #0085ba;
+    content: "\f182";
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
+  .aitt-list-titles--delete-title:active::before {
+    color: #dc3232; }
+  .aitt-list-titles--delete-title:hover::before {
+    color: #dc3232; }
+  .aitt-list-titles--delete-title:focus::before {
+    color: #dc3232; }
+
+
+/*# sourceMappingURL=/aitt-admin.css.map */

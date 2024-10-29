@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<ruleset name="All In The Title WPCS">
+
+	<!-- Explicitly point to where WPCS lives in the plugin -->
+	<config name="installed_paths" value="wpcs" />
+
+	<!-- Excludes -->
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>assets/*</exclude-pattern>
+	<exclude-pattern>languages/*</exclude-pattern>
+	<exclude-pattern>tests/*</exclude-pattern>
+	<exclude-pattern>wpcs/*</exclude-pattern>
+	<exclude-pattern>*.json</exclude-pattern>
+	<exclude-pattern>*.js</exclude-pattern>
+
+	<!-- Don't get angry about checking files that don't contain code -->
+	<rule ref="Internal.NoCodeFound">
+		<severity>0</severity>
+	</rule>
+
+	<!-- Ignore mixed line-endings warnings -->
+	<rule ref="Internal.LineEndings.Mixed">
+		<severity>0</severity>
+	</rule>
+
+	<!-- Internal exceptions (often occur on minified files) -->
+	<rule ref="Internal.Tokenizer.Exception">
+		<severity>0</severity>
+	</rule>
+
+	<!-- Include the WordPress Extra (Core + Extras) ruleset, with exclusions. -->
+	<rule ref="WordPress-Extra">
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+	</rule>
+
+	<!-- Include the WordPress Documentation ruleset  -->
+	<rule ref="WordPress-Docs" />
+
+	<!-- Security: Check that input is validated and sanitize -->
+	<rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+
+	<!-- Security: Ensure that output is escaped -->
+	<rule ref="WordPress.Security.EscapeOutput"/>
+
+	<!-- Security: Ensure that nonce verification is in place where relevant -->
+	<rule ref="WordPress.Security.NonceVerification"/>
+
+	<!-- DB: Discourage Direct DB connections -->
+	<rule ref="WordPress.DB.DirectDatabaseQuery"/>
+
+	<!-- DB: Discourage un-prepared SQL queries -->
+	<rule ref="WordPress.DB.PreparedSQL"/>
+
+	<!-- DB: Highlight slow DB queries -->
+	<rule ref="WordPress.DB.SlowDBQuery"/>
+
+	<!-- Files: Allow theme filename exceptions -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true" />
+		</properties>
+	</rule>
+
+	<!-- Naming: Ensure that all globals have a plugin-specific prefix -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="aitt" />
+		</properties>
+	</rule>
+
+	<!-- WP: Ensure that any i18n functions have a valid plugin-specific textdomain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="aitt" />
+		</properties>
+	</rule>
+
+	<!-- WP: Discourage overriding global variables -->
+	<rule ref="WordPress.WP.GlobalVariablesOverride"/>
+
+	<!-- WP: Warn when the posts per page value is too high -->
+	<rule ref="WordPress.WP.PostsPerPage">
+		<properties>
+			<property name="posts_per_page" value="250"/>
+		</properties>
+	</rule>
+
+	<!-- WP: Ensure that we're not using any functions deprecated three major versions ago -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="5.0" />
+		</properties>
+	</rule>
+
+	<!-- WP: Ensure that we're not using any parameters deprecated three major versions ago -->
+	<rule ref="WordPress.WP.DeprecatedParameters">
+		<properties>
+			<property name="minimum_supported_version" value="5.0" />
+		</properties>
+	</rule>
+
+</ruleset>
